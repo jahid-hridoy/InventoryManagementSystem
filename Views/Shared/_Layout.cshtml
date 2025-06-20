@@ -14,26 +14,35 @@
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm py-3">
         <div class="container-fluid">
-            <a class="nav-link text-dark fw-bold" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+            <a class="navbar-brand fw-bold text-primary" asp-area="" asp-controller="Home" asp-action="Index">
+                <i class="bi bi-house-door-fill me-2"></i>My Inventory
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
+            
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link text-dark fw-bold" asp-area="" asp-controller="Inventory" asp-action="Index">Product List</a>
+                        <a class="nav-link fw-semibold text-dark d-flex align-items-center" asp-controller="Inventory" asp-action="Index">
+                            <i class="bi bi-box-seam me-2"></i>Product List
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark fw-bold" asp-area="" asp-controller="Inventory" asp-action="Create">Add Product</a>
+                        <a class="nav-link fw-semibold text-dark d-flex align-items-center" asp-controller="Inventory" asp-action="Create">
+                            <i class="bi bi-plus-circle-fill me-2"></i>Add Product
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 </header>
+
 <div class="container">
     <main role="main" class="pb-3">
         @RenderBody()
@@ -42,7 +51,7 @@
 
 <footer class="border-top footer text-muted">
     <div class="container">
-        &copy; 2025 - InventoryProject - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        &copy; 2025 - InventoryProject
     </div>
 </footer>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>

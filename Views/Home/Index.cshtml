@@ -2,14 +2,17 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome to Inventory Management System</h1>
-    <p class="lead">Manage your products efficiently with our easy to use interface.</p>
-    <p>
-        <a class="btn btn-primary btn-lg" asp-controller="Inventory" asp-action="Index">
-            <i class="bi bi-box-seam me-2"></i> View Product List
-        </a>
-    <a class="btn btn-secondary btn-lg" asp-controller="Inventory" asp-action="Create">
-        <i class="bi bi-plus-circle me-2"></i> Add New Product
-    </a>
-</div>
+<section class="py-5 bg-light text-center shadow-sm rounded-3">
+    <div class="container">
+        <h1 class="display-4 fw-bold text-primary mb-3">Welcome to Inventory Management System</h1>
+        <p class="lead text-muted">Manage your products efficiently with our easy-to-use interface.</p>
+        <div class="mt-4">
+            <a href="/Inventory/Index" class="btn btn-primary btn-lg me-2 shadow">
+                <i class="bi bi-box-seam me-1"></i> View Products
+            </a>
+            <a href="/Inventory/Create" class="btn btn-outline-primary btn-lg shadow">
+                <i class="bi bi-plus-circle me-1"></i> Add Product
+            </a>
+        </div>
+    </div>
+</section>

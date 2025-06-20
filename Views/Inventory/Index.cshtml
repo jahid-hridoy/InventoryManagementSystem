@@ -1,0 +1,96 @@
+@model IEnumerable<InventoryProject.Models.InventoryModel>
+
+@{
+    ViewData["Title"] = "Product List";
+}
+
+<h1>
+    <i class="bi bi-box-seam me-2"></i> Inventory Management System
+</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-dark fw-semibold mb-3" id="addProduct">
+        <i class="bi bi-plus-circle me-1"></i> Add Product
+    </a>
+</p>
+
+<form method="get" class="row row-cols-1 row-cols-md-3 g-3 align-items-end mb-4">
+    <div class="col">
+        <label for="category" class="form-label fw-semibold">Category</label>
+        <select name="category" id="category" class="form-select shadow-sm">
+            <option value="">All Categories</option>
+            @foreach (var bg in Enum.GetNames(typeof(Category)))
+            {
+                <option value="@bg">@bg</option>
+            }
+        </select>
+    </div>
+
+    <div class="col">
+        <label for="productName" class="form-label fw-semibold">Product Name</label>
+        <input type="text" id="productName" name="productName" class="form-control shadow-sm" placeholder="Search by Product Name" />
+    </div>
+
+    <div class="col d-grid">
+        <button type="submit" class="btn btn-primary btn-lg shadow-sm">Search</button>
+    </div>
+</form>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark"> 
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    @if (Model != null && Model.Any())
+    {
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">View</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    }
+    else
+    {
+    <tr>
+        <td colspan="9">No Product Found</td>
+    </tr> 
+    }
+    </tbody>
+</table>
