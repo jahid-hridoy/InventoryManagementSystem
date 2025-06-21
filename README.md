@@ -1,6 +1,6 @@
 # 📦 Inventory Management System
 
-A simple, user-friendly web application for managing products efficiently, built using ASP.NET Core with Razor Pages and SQL Server.
+A simple, user-friendly web application for managing products efficiently, built using ASP.NET Core MVC and SQL Server.
 
 ---
 
@@ -17,7 +17,7 @@ A simple, user-friendly web application for managing products efficiently, built
 
 ## ⚙️ Tech Stack
 
-- ASP.NET Core Razor Pages
+- ASP.NET Core MVC
 - Entity Framework Core
 - SQL Server
 - Bootstrap 5 for responsive UI
